@@ -1,0 +1,20 @@
+<%= form_for @scuba do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, :required => true, :autofocus => true, :placeholder => '1st dive ...' %>
+  <%= f.label :date %>
+  <%= f.date_field :date, :required => true %>
+  <%= f.label :location %>
+  <%= f.text_field :location, :required => true, :placeholder => 'Sydney' %>
+  <%= f.label :duration %>
+  <%= f.number_field :duration, :required => true %>
+  <%= f.label :depth %>
+  <%= f.number_field :depth, :required => true %>
+  <%= f.label :gps %>
+  <%= f.text_field :gps, :placeholder => 'coordinates' %>
+  <%= f.label :buddy %>
+  <%= f.text_field :buddy, :placeholder => 'My diving buddy' %>
+  <%= f.label :notes %>
+  <%= f.text_area :notes, :placeholder => 'notes' %>
+  <%= f.submit %>
+<% end %>

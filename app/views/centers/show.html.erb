@@ -1,3 +1,10 @@
-<h1>Centers#show</h1>
-<p>Find me in app/views/centers/show.html.erb</p>
+<h1>Find you next diving center:</h1>
 <h1><%= @center.name %></h1>
+<ul>
+
+  <li><%= @center.country %></li>
+  <li><%= @center.city %></li>
+  <li><%= link_to 'Website', @center.website, target: :_blank %></li>
+
+</ul>
+<%= image_tag @center.photo, :class => 'dive_center_img' if @center.photo.present? %>

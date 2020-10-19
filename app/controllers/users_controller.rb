@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    # NYI access for Admin
   end
 
   def new
@@ -16,9 +17,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    # NYI access for Admin
   end
 
   def show
+    # NYI access for Admin
   end
 
 

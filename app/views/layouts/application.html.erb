@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <h1>divR</h1>
+
+    <nav>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Videos', videos_path %>
+      <%= link_to 'Diving Center', centers_path %>
+      <%= link_to 'Add a Center', new_center_path %>
+      <%= link_to 'New User', new_user_path %>
+
+
+    </nav>
+
+
     <%= yield %>
   </body>
 </html>

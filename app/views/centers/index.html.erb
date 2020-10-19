@@ -1,0 +1,11 @@
+<h1>Diving centers</h1>
+<p>Here the list of the diving centers</p>
+
+<% @centers.each do |center| %>
+  <ul>
+    <h2><%= link_to center.name, center %></h2>
+    <li>
+      <%= center.country %>
+    </li>
+  </ul>
+<% end %>

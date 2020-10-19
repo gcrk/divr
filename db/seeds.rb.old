@@ -1,0 +1,73 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+u1 = User.create :name => 'Jacques Mayol', :email => 'jm@divr.com', :password => 'chicken', :pro => false
+u2 = User.create :name => 'Enzo Molinari', :email => 'em@divr.com', :password => 'chicken', :pro => false
+u3 = User.create :name => 'Paddy', :email => 'paddy@divr.com', :password => 'chicken', :pro => true
+u4 = User.create :name => 'Eugene', :email => 'eugene@divr.com', :password => 'chicken', :pro => true
+u5 = User.create :name => 'Nobu', :email => 'nobu@divr.com', :password => 'chicken', :pro => true
+puts "#{ User.count} users"
+
+Dive.destroy_all
+d1 = Dive.create :title => 'First dive in thailand', :date => '', :location => 'Thailand, Koh Tao', :duration => 58, :depth => 18, :gps => '', :buddy => 'Enzo', :notes => ''
+d2 = Dive.create :title => 'Second dive in thailand', :date => '', :location => 'Thailand, Koh Tao', :duration => 63, :depth => 15, :gps => '', :buddy => 'Enzo', :notes => ''
+d3 = Dive.create :title => 'First dive in thailand', :date => '', :location => 'Thailand, Koh Tao', :duration => 58, :depth => 18, :gps => '', :buddy => 'Jacques', :notes => ''
+d4 = Dive.create :title => 'Second dive in thailand', :date => '', :location => 'Thailand, Koh Tao', :duration => 63, :depth => 15, :gps => '', :buddy => 'Jacques', :notes => ''
+d5 = Dive.create :title => 'Great dive in gozo', :date => '', :location => 'Malta', :duration => 55, :depth => 23, :gps => '', :buddy => 'Enzo', :notes => 'Clear water, and a lot of octopus'
+d6 = Dive.create :title => 'Dive in la valette', :date => '', :location => 'Malta', :duration => 72, :depth => 12, :gps => '', :buddy => 'Enzo', :notes => 'Nice view of a shipwreck'
+d7 = Dive.create :title => 'Great dive in gozo', :date => '', :location => 'Malta', :duration => 55, :depth => 23, :gps => '', :buddy => 'Jacques', :notes => 'Clear water, and a lot of octopus'
+d8 = Dive.create :title => 'Dive in la valette', :date => '', :location => 'Malta', :duration => 72, :depth => 12, :gps => '', :buddy => 'Jacques', :notes => 'Nice view of a shipwreck'
+d9 = Dive.create :title => 'My best dive in zamami', :date => '', :location => 'Zamami island', :duration => 62, :depth => 18, :gps => '', :buddy => 'Enzo', :notes => 'A lot of turtles and a very clear water'
+d10 = Dive.create :title => 'Great dive in zamami', :date => '', :location => 'Zamami island', :duration => 71, :depth => 14, :gps => '', :buddy => 'Enzo', :notes => 'I have a lot of videos of coral reef, with clown fishes and lion fishes'
+d11 = Dive.create :title => 'My best dive in zamami', :date => '', :location => 'Zamami island', :duration => 62, :depth => 18, :gps => '', :buddy => 'Jacques', :notes => 'A lot of turtles and a very clear water'
+d12 = Dive.create :title => 'Great dive in zamami', :date => '', :location => 'Zamami island', :duration => 71, :depth => 14, :gps => '', :buddy => 'Jacques', :notes => 'I have a lot of videos of coral reef, with clown fishes and lion fishes'
+puts "#{ Dive.count} dives"
+
+Dive_center.destroy_all
+c1 = Dive_center.create :name => 'Big Blue Diving', :country => 'Thailand', :city => 'Koh Tao', :photo => '', :website => 'https://www.bigbluediving.com/'
+c2 = Dive_center.create :name => 'Plongee Malte', :country => 'Malta', :city => 'Bugibba', :photo => '', :website => 'https://www.plongee-malte.fr/'
+c3 = Dive_center.create :name => "Cat's Inn Kerama", :country => 'Japan', :city => 'Zamami', :photo => '', :website => 'http://www.catsinnkerama.com/'
+puts "#{ Dive_center.count} dive centers"
+
+v1 = Video.create :name => 'Chumphon Pinnacle', :link => 'https://www.youtube.com/watch?v=kI2jL16hBjI'
+v2 = Video.create :name => 'Sail Rock', :link => 'https://www.youtube.com/watch?v=NBdPqNJtGGE'
+v3 = Video.create :name => 'Gozo - Blue Hole', :link => 'https://www.youtube.com/watch?v=sddJVnkghL0'
+v4 = Video.create :name => 'La valette Shipwreck', :link => 'https://www.youtube.com/watch?v=EnerC4YTB68'
+v5 = Video.create :name => 'Turtles in Zamami', :link => 'https://www.youtube.com/watch?v=8Zvu57BEx_k'
+v6 = Video.create :name => 'Coral reef Zamami', :link => 'https://www.youtube.com/watch?v=Ts7gcTU5DSc'
+puts "#{ Video.count} videos"
+
+puts "dives and users"
+u1.dives << d1 << d2 << d5 << d6 << d9 << d10
+u2.dives << d3 << d4 << d7 << d8 << d11 << d12
+
+puts "dive centers and users"
+u3.dive_centers << c1
+u4.dive_centers << c2
+u5.dive_centers << c3
+
+puts "videos and users"
+
+u1.videos << v1 << v3 << v5
+u2.videos << v2 << v4 << v6
+
+puts "dive_centers and videos"
+
+c1.videos << v1 << v2
+c2.videos << v3 << v4
+c3.videos << v5 << v6
+
+puts "dives and videos"
+
+v1.dives << d1
+v2.dives << d4
+v3.dives << d5
+v4.dives << d8
+v5.dives << d9
+v6.dives << d12

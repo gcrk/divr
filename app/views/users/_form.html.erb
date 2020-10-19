@@ -1,0 +1,14 @@
+<%= form_for @user do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :autofocus => true, :placeholder => 'My name' %>
+  <%= f.label :email %>
+  <%= f.text_field :email, :required => true, :placeholder => 'name@mail.com' %>
+  <%= f.label :pro %>
+  <%= f.check_box :pro %>
+  <%= f.label :password %>
+  <%= f.text_field :password, :required => true, :placeholder => '8 characters minimum' %>
+  <%= f.label :password_confirmation %>
+  <%= f.text_field :password_confirmation, :placeholder => 'retype your password' %>
+  <%= f.submit %>
+<% end %>

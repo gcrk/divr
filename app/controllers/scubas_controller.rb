@@ -4,6 +4,7 @@ class ScubasController < ApplicationController
 
   def index
     @scubas = @current_user.scubas.all
+    @scubas_sort_by_date = @scubas.order(:date).reverse
   end
 
   def new
@@ -33,6 +34,7 @@ class ScubasController < ApplicationController
 
   def show
     @scuba = @current_user.scubas.find params[:id]
+
   end
 
   private

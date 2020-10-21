@@ -33,6 +33,7 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find params[:id]
+    @video_url = @video.link.sub! 'watch?v=', 'embed/'
   end
 
   private

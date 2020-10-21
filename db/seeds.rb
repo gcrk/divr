@@ -15,24 +15,34 @@ u5 = User.create :name => 'Nobu', :email => 'nobu@divr.com', :password => 'chick
 puts "#{ User.count} users"
 
 Scuba.destroy_all
-d1 = Scuba.create :title => 'First dive in thailand', :location => 'Thailand, Koh Tao', :duration => 58, :depth => 18, :buddy => 'Enzo', :notes => 'This was an awesome dive thanks to the staff'
-d2 = Scuba.create :title => 'Second dive in thailand', :location => 'Thailand, Koh Tao', :duration => 63, :depth => 15, :buddy => 'Enzo', :notes => 'This was an awsome dive thanks to the staff'
-d3 = Scuba.create :title => 'First dive in thailand', :location => 'Thailand, Koh Tao', :duration => 58, :depth => 18, :buddy => 'Jacques', :notes => 'This was an awsome dive thanks to the staff'
-d4 = Scuba.create :title => 'Second dive in thailand', :location => 'Thailand, Koh Tao', :duration => 63, :depth => 15, :buddy => 'Jacques', :notes => 'This was an awsome dive thanks to the staff'
-d5 = Scuba.create :title => 'Great dive in gozo', :location => 'Malta', :duration => 55, :depth => 23, :buddy => 'Enzo', :notes => 'Clear water, and a lot of octopus'
-d6 = Scuba.create :title => 'Dive in la valette', :location => 'Malta', :duration => 72, :depth => 12, :buddy => 'Enzo', :notes => 'Nice view of a shipwreck'
-d7 = Scuba.create :title => 'Great dive in gozo', :location => 'Malta', :duration => 55, :depth => 23, :buddy => 'Jacques', :notes => 'Clear water, and a lot of octopus'
-d8 = Scuba.create :title => 'Dive in la valette', :location => 'Malta', :duration => 72, :depth => 12, :buddy => 'Jacques', :notes => 'Nice view of a shipwreck'
-d9 = Scuba.create :title => 'My best dive in zamami', :location => 'Zamami island', :duration => 62, :depth => 18, :buddy => 'Enzo', :notes => 'A lot of turtles and a very clear water'
-d10 = Scuba.create :title => 'Great dive in zamami', :location => 'Zamami island', :duration => 71, :depth => 14, :buddy => 'Enzo', :notes => 'I have a lot of videos of coral reef, with clown fishes and lion fishes'
-d11 = Scuba.create :title => 'My best dive in zamami', :location => 'Zamami island', :duration => 62, :depth => 18, :buddy => 'Jacques', :notes => 'A lot of turtles and a very clear water'
-d12 = Scuba.create :title => 'Great dive in zamami', :location => 'Zamami island', :duration => 71, :depth => 14, :buddy => 'Jacques', :notes => 'I have a lot of videos of coral reef, with clown fishes and lion fishes'
+d1 = Scuba.create :title => 'First dive in thailand', :date => DateTime.strptime("12/08/2018", "%d/%m/%Y"), :location => 'Thailand, Koh Tao', :duration => 58, :depth => 18, :gps => '10.153171, 99.798714', :buddy => 'Enzo', :notes => 'This was an awesome dive thanks to the staff'
+d2 = Scuba.create :title => 'Second dive in thailand', :date => DateTime.strptime("14/08/2018", "%d/%m/%Y"), :location => 'Thailand, Koh Tao', :duration => 63, :depth => 15, :gps => '10.109155, 99.764258', :buddy => 'Enzo', :notes => 'This was an awsome dive thanks to the staff'
+d3 = Scuba.create :title => 'First dive in thailand', :date => DateTime.strptime("12/08/2018", "%d/%m/%Y"), :location => 'Thailand, Koh Tao', :duration => 58, :depth => 18, :gps => '10.153171, 99.798714', :buddy => 'Jacques', :notes => 'This was an awsome dive thanks to the staff'
+d4 = Scuba.create :title => 'Second dive in thailand', :date => DateTime.strptime("14/08/2018", "%d/%m/%Y"), :location => 'Thailand, Koh Tao', :duration => 63, :depth => 15, :gps => '10.109155, 99.764258', :buddy => 'Jacques', :notes => 'This was an awsome dive thanks to the staff'
+d5 = Scuba.create :title => 'Great dive in gozo', :date => DateTime.strptime("13/08/2017", "%d/%m/%Y"), :location => 'Malta', :duration => 55, :depth => 23, :gps => '36.053162, 14.188029', :buddy => 'Enzo', :notes => 'Clear water, and a lot of octopus'
+d6 = Scuba.create :title => 'Dive in la valette', :date => DateTime.strptime("16/08/2017", "%d/%m/%Y"), :location => 'Malta', :duration => 72, :depth => 12, :gps => '35.898131, 14.532905', :buddy => 'Enzo', :notes => 'Nice view of a shipwreck'
+d7 = Scuba.create :title => 'Great dive in gozo', :date => DateTime.strptime("13/08/2017", "%d/%m/%Y"), :location => 'Malta', :duration => 55, :depth => 23, :gps => '36.053162, 14.188029', :buddy => 'Jacques', :notes => 'Clear water, and a lot of octopus'
+d8 = Scuba.create :title => 'Dive in la valette', :date => DateTime.strptime("16/08/2017", "%d/%m/%Y"), :location => 'Malta', :duration => 72, :depth => 12, :gps => '35.898131, 14.532905', :buddy => 'Jacques', :notes => 'Nice view of a shipwreck'
+d9 = Scuba.create :title => 'My best dive in zamami', :date => DateTime.strptime("21/08/2016", "%d/%m/%Y"), :location => 'Zamami island', :duration => 62, :depth => 18, :gps => '26.224626, 127.288940', :buddy => 'Enzo', :notes => 'A lot of turtles and a very clear water'
+d10 = Scuba.create :title => 'Great dive in zamami', :date => DateTime.strptime("23/08/2016", "%d/%m/%Y"), :location => 'Zamami island', :duration => 71, :depth => 14, :gps => '26.238437, 127.286798', :buddy => 'Enzo', :notes => 'I have a lot of videos of coral reef, with clown fishes and lion fishes'
+d11 = Scuba.create :title => 'My best dive in zamami', :date => DateTime.strptime("21/08/2016", "%d/%m/%Y"), :location => 'Zamami island', :duration => 62, :depth => 18, :gps => '26.224626, 127.288940', :buddy => 'Jacques', :notes => 'A lot of turtles and a very clear water'
+d12 = Scuba.create :title => 'Great dive in zamami', :date => DateTime.strptime("23/08/2016", "%d/%m/%Y"), :location => 'Zamami island', :duration => 71, :depth => 14, :gps => '26.238437, 127.286798', :buddy => 'Jacques', :notes => 'I have a lot of videos of coral reef, with clown fishes and lion fishes'
 puts "#{ Scuba.count} dives"
 
 Center.destroy_all
-c1 = Center.create :name => 'Big Blue Diving', :country => 'Thailand', :city => 'Koh Tao', :website => 'https://www.bigbluediving.com/'
-c2 = Center.create :name => 'Plongee Malte', :country => 'Malta', :city => 'Bugibba', :website => 'https://www.plongee-malte.fr/'
-c3 = Center.create :name => "Cat's Inn Kerama", :country => 'Japan', :city => 'Zamami', :website => 'http://www.catsinnkerama.com/'
+c1 = Center.create :name => 'Big Blue Diving', :country => 'Thailand', :city => 'Koh Tao', :gps => '10.102451, 99.827721', :website => 'https://www.bigbluediving.com/'
+c2 = Center.create :name => 'Plongee Malte', :country => 'Malta', :city => 'Bugibba', :gps => '35.950063, 14.411244', :website => 'https://www.plongee-malte.fr/'
+c3 = Center.create :name => "Cat's Inn Kerama", :country => 'Japan', :city => 'Zamami', :gps => '26.228974, 127.302814', :website => 'http://www.catsinnkerama.com/'
+c4 = Center.create :name => 'Diving Star', :country => 'Egypt', :city => 'Hurghada', :gps => '27.259477, 33.814817', :website => 'https://diving-star.com/'
+c5 = Center.create :name => 'Pro Dive Cairns', :country => 'Australia', :city => 'Cairns', :gps => '-16.928179, 145.771420', :website => 'http://www.prodive-cairns.com.au/'
+c6 = Center.create :name => 'Pro Dive Coogee', :country => 'Australia', :city => 'Coogee', :gps => '-33.920028, 151.255770', :website => 'https://www.prodive.com.au/'
+c7 = Center.create :name => 'Turtle Divers', :country => 'Philippines', :city => 'Palawan', :gps => '11.180164, 119.387860', :website => 'http://www.turtle-divers.com/'
+c8 = Center.create :name => 'Dodo Divers', :country => 'Mauritius', :city => 'Calodyne', :gps => '-20.001602, 57.645391', :website => 'http://www.dododivers.com/'
+c9 = Center.create :name => 'Reef Pirates Diving', :country => 'United States', :city => 'Honolulu', :gps => '21.278772, -157.704865', :website => 'http://www.reefpirates.com/'
+c10 = Center.create :name => 'Palau Dive Adventures', :country => 'Palau', :city => 'Koror', :gps => '7.343387, 134.480250', :website => 'https://palaudiveadventures.com/'
+c11 = Center.create :name => 'Bahama Divers', :country => 'Bahamas', :city => 'Nassau', :gps => '25.074398, -77.317656', :website => 'https://www.bahamadivers.com/'
+c11 = Center.create :name => 'Blue Water Divers', :country => 'British Virgin Islands', :city => 'British Virgin Islands', :gps => '18.400142, -64.634635', :website => 'http://www.bluewaterdiversbvi.com/'
+
 puts "#{ Center.count} dive centers"
 
 Video.destroy_all
@@ -72,9 +82,3 @@ d5.videos << v3
 d8.videos << v4
 d9.videos << v5
 d12.videos << v6
-# v1.scuba << d1
-# v2.scuba << d4
-# v3.scuba << d5
-# v4.scuba << d8
-# v5.scuba << d9
-# v6.scuba << d12

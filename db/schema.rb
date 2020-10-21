@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_10_18_074700) do
     t.text "name"
     t.text "country"
     t.text "city"
+    t.text "gps"
     t.text "photo"
     t.text "website"
     t.integer "user_id"

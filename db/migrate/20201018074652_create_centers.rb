@@ -4,6 +4,7 @@ class CreateCenters < ActiveRecord::Migration[5.2]
       t.text :name
       t.text :country
       t.text :city
+      t.text :gps
       t.text :photo
       t.text :website
       t.integer :user_id

@@ -1,2 +1,31 @@
 <h1>Dive details</h1>
 <h1><%= @scuba.title %></h1>
+<ul>
+
+  <li>Date: <%= @scuba.date.strftime('%e %B %Y') %></li>
+  <li>Location: <%= @scuba.location %></li>
+  <li>Duration: <%= @scuba.duration %></li>
+  <li>Maximum Depth: <%= @scuba.depth %></li>
+  <li>Buddy: <%= @scuba.buddy %></li>
+  <li>Notes: <%= @scuba.notes %></li>
+
+</ul>
+
+<div id="divemap"></div>
+
+<%= link_to 'edit datas', edit_scuba_path %>
+<script>
+  $(document).ready(function() {
+    let diveMap = L.map('divemap').setView([<%= @scuba.gps %>], 12);
+    L.tileLayer('https://api.maptiler.com/maps/topographique/{z}/{x}/{y}.png?key=7RCtJcLXrvnPQmX2OfA1', {
+    attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+    }).addTo(diveMap);
+
+    var circle = L.circle([<%= @scuba.gps %>], {
+    color: '#2E0560',
+    fillColor: '#2E0560',
+    fillOpacity: 0.3,
+    radius: 500
+  }).addTo(diveMap);
+});
+</script>

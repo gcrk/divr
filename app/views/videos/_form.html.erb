@@ -1,0 +1,10 @@
+<%= form_for @video do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :autofocus => true, :placeholder => '1st dive ...' %>
+
+  <%= f.label :link %>
+  <%= f.text_field :link, :required => true, :placeholder => 'http://...' %>
+
+  <%= f.submit %>
+<% end %>

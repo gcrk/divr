@@ -1,4 +1,4 @@
 
 <h1><%= @video.name %></h1>
-<iframe width="560" height="315" src='<%= @video.link %>' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<%= video_tag @video.link %>
+<iframe width="560" height="315" src='<%= @video_url %>' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<%= link_to 'edit name or url', edit_video_path %>

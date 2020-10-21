@@ -2,11 +2,13 @@
 <html>
   <head>
     <title>Divr</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= cloudinary_js_config %>
   </head>
 
   <body>
@@ -19,6 +21,7 @@
       <%= link_to 'Add a Center', new_center_path %>
       <% if @current_user.present? %>
         <%= link_to 'Add Video', new_video_path %>
+        <%= link_to 'Add Dive', new_scuba_path %>
         <%= link_to 'My Dives', scubas_path %>
         <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete' %>
       <% else %>

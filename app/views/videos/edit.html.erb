@@ -1,2 +1,4 @@
-<h1>Videos#edit</h1>
-<p>Find me in app/views/videos/edit.html.erb</p>
+<h1>Edit title and URL of your video</h1>
+
+<%= render :partial => 'form' %>
+<%= link_to "Delete this video", @video, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>

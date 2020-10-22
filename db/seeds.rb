@@ -42,7 +42,7 @@ c8 = Center.create :name => 'Dodo Divers', :country => 'Mauritius', :city => 'Ca
 c9 = Center.create :name => 'Reef Pirates Diving', :country => 'United States', :city => 'Honolulu', :gps => '21.278772, -157.704865', :website => 'http://www.reefpirates.com/'
 c10 = Center.create :name => 'Palau Dive Adventures', :country => 'Palau', :city => 'Koror', :gps => '7.343387, 134.480250', :website => 'https://palaudiveadventures.com/'
 c11 = Center.create :name => 'Bahama Divers', :country => 'Bahamas', :city => 'Nassau', :gps => '25.074398, -77.317656', :website => 'https://www.bahamadivers.com/'
-c11 = Center.create :name => 'Blue Water Divers', :country => 'British Virgin Islands', :city => 'British Virgin Islands', :gps => '18.400142, -64.634635', :website => 'http://www.bluewaterdiversbvi.com/'
+c12 = Center.create :name => 'Blue Water Divers', :country => 'British Virgin Islands', :city => 'British Virgin Islands', :gps => '18.400142, -64.634635', :website => 'http://www.bluewaterdiversbvi.com/'
 
 puts "#{ Center.count} dive centers"
 
@@ -63,7 +63,7 @@ puts "dive centers and users"
 u3.centers << c1
 u4.centers << c2
 u5.centers << c3
-u6.centers << c4 << c5 << c6 << c7 << c8 << c9 << c10 << c11 << c12 
+u6.centers << c4 << c5 << c6 << c7 << c8 << c9 << c10 << c11 << c12
 
 puts "videos and users"
 

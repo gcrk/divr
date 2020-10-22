@@ -12,5 +12,5 @@
   <%= f.text_field :website, :required => true, :placeholder => 'http://www...' %>
   <%= f.label :photo %>
   <%= f.cl_image_upload :photo %>
-  <%= f.submit %>
+  <%= f.submit 'Submit', :class => 'button' %>
 <% end %>

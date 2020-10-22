@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :scubas
   resources :accounts, :only => [:index]
   get '/account/myvideos' => 'accounts#myvideos'
+  get '/account/mycenters' => 'accounts#mycenters'
+  get '/account/myscubas' => 'accounts#myscubas'
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'

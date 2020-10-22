@@ -13,7 +13,7 @@ class ScubasController < ApplicationController
 
   def create
     @current_user.scubas.create scuba_params
-    redirect_to root_path
+    redirect_to accounts_path
   end
 
   def edit
@@ -23,13 +23,13 @@ class ScubasController < ApplicationController
   def destroy
     scuba = @current_user.scubas.find params[:id]
     scuba.destroy
-    redirect_to root_path
+    redirect_to accounts_path
   end
 
   def update
     scuba = @current_user.scubas.find params[:id]
     scuba.update scuba_params
-    redirect_to root_path
+    redirect_to accounts_path
   end
 
   def show

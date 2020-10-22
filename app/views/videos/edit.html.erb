@@ -1,7 +1,6 @@
 <h1 class='title'>Edit title and URL of your video</h1>
-
-<%= render :partial => 'form' %>
-
 <div class="subtitle">
   <%= link_to "Delete this video", @video, :method => 'delete', :data => { :confirm => 'Are you sure?' }, :class => 'delete'%>
 </div>
+
+<%= render :partial => 'form' %>

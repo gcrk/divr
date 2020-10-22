@@ -2,12 +2,12 @@
 
 <div class="divedetails">
   <h1><%= @scuba.title %></h1>
-  <p>Date: <%= @scuba.date.strftime('%e %B %Y') %></p>
-  <p>Location: <%= @scuba.location %></p>
-  <p>Duration: <%= @scuba.duration %></p>
-  <p>Maximum Depth: <%= @scuba.depth %></p>
-  <p>Buddy: <%= @scuba.buddy %></p>
-  <p>Notes: <%= @scuba.notes %></p>
+  <p><span class="key">Date:</span> <%= @scuba.date.strftime('%e %B %Y') %></p>
+  <p><span class="key">Location:</span> <%= @scuba.location %></p>
+  <p><span class="key">Duration:</span> <%= @scuba.duration %> minutes</p>
+  <p><span class="key">Maximum Depth:</span> <%= @scuba.depth %> meters</p>
+  <p><span class="key">Buddy:</span> <%= @scuba.buddy %></p>
+  <p><span class="key">Notes:</span> <%= @scuba.notes %></p>
 </div>
 
 <div id="divemap"></div>

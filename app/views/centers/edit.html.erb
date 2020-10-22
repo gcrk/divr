@@ -1,2 +1,6 @@
-<h1 class='title'>Edit informations</h1>
+<h1 class='title'>Edit diving center informations</h1>
+<div class="subtitle">
+  <%= link_to "Delete this center", @center, :method => 'delete', :data => { :confirm => 'Are you sure?' }, :class => 'delete'%>
+</div>
+
 <%= render :partial => 'form' %>

@@ -1,3 +1,6 @@
 <h1 class='title'>Edit your dive</h1>
+<div class="subtitle">
+  <%= link_to "Delete this dive", @scuba, :method => 'delete', :data => { :confirm => 'Are you sure?' }, :class => 'delete'%>
+</div>
+
 <%= render :partial => 'form' %>
-<%= link_to "Delete this dive", @scuba, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>

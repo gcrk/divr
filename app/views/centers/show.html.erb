@@ -1,10 +1,11 @@
-<h1>Find you next diving center:</h1>
-<h1><%= @center.name %></h1>
-<ul>
+<h1 class='title'><%= @center.name %></h1>
 
-  <li><%= @center.country %></li>
-  <li><%= @center.city %></li>
-  <li><%= link_to 'Website', @center.website, target: :_blank %></li>
+<div class="centerdetails">
+  <div class="centerimg"><%= cl_image_tag(@center.photo, :class => 'centerimg') %></div>
+  <div>Country: <%= @center.country %></div>
+  <div>City: <%= @center.city %></div>
+  <div>Contact name: <%= @center.user.name %></div>
+  <div>Contact email: <%= @center.user.email %></div>
 
-</ul>
-<%= image_tag @center.photo, :class => 'dive_center_img' if @center.photo.present? %>
+  <div>Website: <%= link_to @center.website, target: :_blank %></div>
+</div>

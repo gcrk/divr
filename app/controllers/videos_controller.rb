@@ -4,7 +4,7 @@ class VideosController < ApplicationController
     @videos = Video.all
   end
 
-  before_action :check_for_login
+  # before_action :check_for_login
 
   def new
     @video = Video.new
@@ -33,7 +33,7 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find params[:id]
-    @video_url = @video.link.sub! 'watch?v=', 'embed/'
+    @video_url = @video.link.sub 'watch?v=', 'embed/'
   end
 
   private

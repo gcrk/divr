@@ -1,6 +1,6 @@
 class CentersController < ApplicationController
   def index
-    @centers = Center.all
+    @centers = Center.all.order(:country)
   end
 
   def new
@@ -8,7 +8,12 @@ class CentersController < ApplicationController
   end
 
   def create
-    @current_user.centers.create center_params
+    center = Center.new center_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      center.photo = req["public_id"]
+      center.save
+    end
     redirect_to root_path
   end
 

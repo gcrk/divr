@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def index
     # NYI access for Admin
   end
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    # NYI access for Admin
+    @current_user.users.find params[:id]
   end
 
 

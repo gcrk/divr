@@ -1,0 +1,13 @@
+<h1 class='title'>My account</h1>
+<div class="account">
+  <h3>My name: <%= @current_user.name %></h3>
+  <h3>My email: <%= @current_user.email %></h3>
+  <% if @current_user.pro? %>
+    <p>This is a professional account</p>
+  <% else %>
+    <p>This is a personal account</p>
+  <% end %>
+  <p>Dive recorded: <span><%= @current_user.scubas.count %></span></p>
+  <p>Videos: <span><%= @current_user.videos.count %></span> <%= link_to 'My videos', account_myvideos_path, :class => 'editlink' %></p>
+
+</div>

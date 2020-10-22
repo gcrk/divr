@@ -1,6 +1,9 @@
-<h1>List of videos</h1>
+<h1 class='title'>List of videos</h1>
 
 <% @videos.each do |video| %>
-  <h1><%= link_to video.name, video %></h1>
-
+<div class="videolist">
+  <%= link_to image_tag((video.link.sub('https://www.youtube.com/watch?v=', 'http://img.youtube.com/vi/') + '/mqdefault.jpg'), :class => 'thumb'), video %>
+  <h3><%= link_to video.name, video %></h3>
+  <p>by: <%= video.user.name %></p>
+</div>
 <% end %>

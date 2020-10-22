@@ -1,14 +1,4 @@
-<h1>Welcome, this is the homepage</h1>
-<p>please create your account</p>
-<div id="worldmap"></div>
-<script>
-  $(document).ready(function() {
-    let worldMap = L.map('worldmap').setView([15, 36], 2);
-    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7RCtJcLXrvnPQmX2OfA1', {
-    attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
-    }).addTo(worldMap);
-    <% @center.each do |center| %>
-      L.marker([<%= center.gps %>]).addTo(worldMap).bindPopup(`<%= link_to center.name, center %>`);
-    <% end %>
-});
-</script>
+<div id="indexpages">
+<h1>Welcome to divR</h1>
+<p>divR is a new service for divers. You can log all your dives and track them on a map. You can share your videos with other users. And you'll find informations about our affiliate diving center.</p>
+</div>

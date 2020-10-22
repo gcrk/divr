@@ -12,6 +12,7 @@ u2 = User.create :name => 'Enzo Molinari', :email => 'em@divr.com', :password =>
 u3 = User.create :name => 'Paddy', :email => 'paddy@divr.com', :password => 'chicken', :pro => true
 u4 = User.create :name => 'Eugene', :email => 'eugene@divr.com', :password => 'chicken', :pro => true
 u5 = User.create :name => 'Nobu', :email => 'nobu@divr.com', :password => 'chicken', :pro => true
+u6 = User.create :name => 'Admin', :email => 'admin@divr.com', :password => 'chicken', :pro => true
 puts "#{ User.count} users"
 
 Scuba.destroy_all
@@ -62,7 +63,7 @@ puts "dive centers and users"
 u3.centers << c1
 u4.centers << c2
 u5.centers << c3
-
+u6.centers << c4 << c5 << c6 << c7 << c8 << c9 << c10 << c11 << c12 
 
 puts "videos and users"
 

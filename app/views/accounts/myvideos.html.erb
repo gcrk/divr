@@ -1,0 +1,8 @@
+<h1 class='title'>List of my videos</h1>
+
+<% @videos.each do |video| %>
+  <div class="videolist">
+    <h1><%= link_to video.name, video %></h1>
+    <span><%= link_to 'edit name or url', edit_video_path(video.id), :class => 'editlink' %></span>
+  </div>
+<% end %>

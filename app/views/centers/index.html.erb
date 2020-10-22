@@ -1,11 +1,23 @@
-<h1>Diving centers</h1>
-<p>Here the list of the diving centers</p>
-
-<% @centers.each do |center| %>
-  <ul>
-    <h2><%= link_to center.name, center %></h2>
-    <li>
-      <%= center.country %>
-    </li>
-  </ul>
-<% end %>
+<h1 class='title'>Diving centers</h1>
+<p class='subtitle'>Click on a marker to get details</p>
+<div id="worldmap"></div>
+<p class='title'>Here the list of the diving centers:</p>
+<div class="centerlist">
+  <% @centers.each do |center| %>
+    <div class="centerpart">
+      <h2><%= link_to center.name, center %></h2>
+      <p><%= center.country %></p>
+    </div>
+  <% end %>
+</div>
+<script>
+  $(document).ready(function() {
+    let worldMap = L.map('worldmap').setView([15, 36], 2);
+    L.tileLayer('https://api.maptiler.com/maps/outdoor/{z}/{x}/{y}.png?key=7RCtJcLXrvnPQmX2OfA1', {
+    attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+    }).addTo(worldMap);
+    <% @centers.each do |center| %>
+      L.marker([<%= center.gps %>]).addTo(worldMap).bindPopup(`<%= link_to center.name, center %>`);
+    <% end %>
+});
+</script>

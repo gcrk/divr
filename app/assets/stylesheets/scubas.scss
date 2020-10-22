@@ -1,7 +1,13 @@
 // Place all the styles related to the Scubas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#divemap {
+#divemap, #worldmap {
+  z-index: 0;
+  margin: 25px auto 120px;
   height: 480px;
   width: 640px;
+  border-radius: 5px;
+}
+#worldmap {
+  width: 720px;
 }

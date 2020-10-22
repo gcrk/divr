@@ -1,5 +1,29 @@
-<h1>My dives</h1>
-<% @scubas_sort_by_date.each do |scuba| %>
-  <h1><%= link_to scuba.title, scuba %></h1>
+<h1 class='title'>My dives</h1>
 
+
+<% @scubas_sort_by_date.each do |scuba| %>
+  <div class="divelist">
+    <h3 ><%= link_to scuba.title, scuba %></h3>
+    <span><p><%= scuba.date.strftime('%e %B %Y') %></p></span>
+  </div>
 <% end %>
+<div id="worldmap"></div>
+
+<script>
+  $(document).ready(function() {
+    let worldMap = L.map('worldmap').setView([15, 36], 2);
+    L.tileLayer('https://api.maptiler.com/maps/outdoor/{z}/{x}/{y}.png?key=7RCtJcLXrvnPQmX2OfA1', {
+    attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+    }).addTo(worldMap);
+    var diveIcon = L.icon({
+      iconUrl: '<%= image_path("diver.png") %>',
+
+      iconSize:     [40, 40],
+      iconAnchor:   [20, 20],
+    });
+    <% @scubas.each do |scuba| %>
+      L.marker([<%= scuba.gps %>], {icon: diveIcon}).addTo(worldMap).bindPopup(`<%= link_to scuba.title, scuba %>`);
+
+    <% end %>
+});
+</script>

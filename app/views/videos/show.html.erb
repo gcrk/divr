@@ -1,4 +1,5 @@
-
-<h1><%= @video.name %></h1>
+<h1 class='title'><%= @video.name %></h1>
+<div class="videolist">
 <iframe width="560" height="315" src='<%= @video_url %>' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<%= link_to 'edit name or url', edit_video_path %>
+<p>By: <%= @video.user.name %></p>
+</div>

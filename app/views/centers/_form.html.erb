@@ -1,4 +1,4 @@
-<%= form_for @center do |f| %>
+<%= form_for(@center, :class => 'form', :html => {:multipart => true}) do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name, :required => true, :autofocus => true, :placeholder => 'My diving Center' %>
@@ -6,9 +6,11 @@
   <%= f.text_field :country, :required => true, :placeholder => 'Australia' %>
   <%= f.label :city %>
   <%= f.text_field :city, :required => true, :placeholder => 'Sydney' %>
+  <%= f.label :gps %>
+  <%= f.text_field :gps, :required => true, :placeholder => '12.345, 34.567' %>
   <%= f.label :website %>
   <%= f.text_field :website, :required => true, :placeholder => 'http://www...' %>
   <%= f.label :photo %>
-  <%= f.text_field :photo, :placeholder => 'http://www...' %>
+  <%= f.cl_image_upload :photo %>
   <%= f.submit %>
 <% end %>

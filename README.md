@@ -8,11 +8,11 @@ Things you may want to cover:
 ## Ruby version
   Ruby 2.7.1
 ## System dependencies
-  gem cloudinary
-  gem jquery
-  gem bcrypt
-  API Leaflet
-  API Maptiler
+  #### gem cloudinary
+  #### gem jquery
+  #### gem bcrypt
+  #### API Leaflet
+  #### API Maptiler
 ## Languages
   HTML
   CSS

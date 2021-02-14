@@ -35,9 +35,12 @@ To run locally, run the following in the root directory in the terminal:
 
 ## The App
   You can visit the app at this address: [divR](https://divr-app.herokuapp.com/scubas)
-  ### Users
+
   **login infos: email: jm@divr.com / password: chicken**
-  you can create to use the app. There 2 type of account : **personal** and **professional**
+
+  ### Users
+
+  You can create to use the app. There 2 type of account : **personal** and **professional**
   with a personal account you can share videos and you can log data from your dives
   with a professional account you can add your own diving center to the list
   ### Diving center

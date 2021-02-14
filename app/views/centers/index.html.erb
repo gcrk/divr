@@ -16,6 +16,7 @@
     L.tileLayer('https://api.maptiler.com/maps/outdoor/{z}/{x}/{y}.png?key=7RCtJcLXrvnPQmX2OfA1', {
     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
     }).addTo(worldMap);
+    <%# this function loop the centers' coordinates to put a marker on the map and a link to the center page %>
     <% @centers.each do |center| %>
       L.marker([<%= center.gps %>]).addTo(worldMap).bindPopup(`<%= link_to center.name, center %>`);
     <% end %>

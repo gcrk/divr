@@ -1,15 +1,21 @@
 <h1 class='title'>My account</h1>
 <div class="account">
+
   <h3>My name: <%= @current_user.name %></h3>
   <h3>My email: <%= @current_user.email %></h3>
+
   <% if @current_user.pro? %>
     <p>This is a professional account</p>
     <p>Center: <span><%= @current_user.centers.count %></span> <%= link_to 'Manage my diving center', account_mycenters_path, :class => 'editlink' %></p>
   <% else %>
     <p>This is a personal account</p>
   <% end %>
+
   <p>Dive recorded: <span><%= @current_user.scubas.count %></span> <%= link_to 'Manage my dives', account_myscubas_path, :class => 'editlink' %></p>
   <p>Videos: <span><%= @current_user.videos.count %></span> <%= link_to 'Manage my videos', account_myvideos_path, :class => 'editlink' %></p>
+
+
+  <%# this function check if the user have dives logged in his account %>
   <% @total = 0  %>
   <% if @scubas.size != 0 %>
     <% @scubas.each do |scuba| %>

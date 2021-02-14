@@ -33,6 +33,7 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find params[:id]
+    # this line is here to transform a regular URL to an embedded URL
     @video_url = @video.link.sub 'watch?v=', 'embed/'
   end
 

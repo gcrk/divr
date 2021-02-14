@@ -1,31 +1,42 @@
-# README
+# DIVR | An App for Scuba Divers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Introduction
 
-Things you may want to cover:
+This is my 1st project during Software Engineering Immersive course at General Assembly.
+This app is for divers and diving center owners. As a user you can upload your diving videos and also tracking all your dives by recording all important informations.
+As a professional user you can list you diving center so user can find you on an interactive world map.
 
-## Ruby version
+## Ruby on Rails
   Ruby 2.7.1
+  Rails 5.2.4.4
+  
 ## System dependencies
   #### gem cloudinary
   #### gem jquery
   #### gem bcrypt
   #### API Leaflet
   #### API Maptiler
+
 ## Languages
   HTML
   CSS
   Javascript
   Ruby
   Rails
+
 ## Database creation
-  db:create
-  db:migrate
-  db:seed
+To run locally, run the following in the root directory in the terminal:
+1. `npm install`
+2. `bundle install`
+3. `rails db:create`
+4. `rails db:migrate`
+5. `rails db:seed`
+6. `rails s`
+
 ## The App
   You can visit the app at this address: [divR](https://divr-app.herokuapp.com/scubas)
   ### Users
+  login infos: email: jm@divr.com / password: chicken
   you can create to use the app. There 2 type of account : **personal** and **professional**
   with a personal account you can share videos and you can log data from your dives
   with a professional account you can add your own diving center to the list
